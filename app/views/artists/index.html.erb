@@ -1,0 +1,14 @@
+<div class="row">
+  <% @artists.each do |artist| %>
+    <div class="col-xs-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= image_tag(artist.image_url, class:'img-responsive') unless artist.image_url.blank? %>
+        
+          <h3 class="text-center"><%= artist.name.capitalize %></h3>
+          <button class="center-block btn btn-default btn-block"><%= link_to 'Ver más', artist_path(artist) %></button> 
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
